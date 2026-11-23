@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEBIFIZSHOP — Лучший шоп по продаже физов</title>
+    <title>TEBIFIZSHOP // DEV-CORE — Лучший шоп по продаже физов</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #060b08;
-            --card-surface: linear-gradient(160deg, rgba(16, 30, 22, 0.92) 0%, rgba(8, 15, 11, 0.96) 100%);
+            --card-surface: linear-gradient(160deg, rgba(16, 30, 22, 0.94) 0%, rgba(8, 15, 11, 0.98) 100%);
             --dollar-green: #18a558;
             --dollar-light: #2ecc71;
             --gold: #f1c40f;
-            --gold-soft: rgba(241, 196, 15, 0.22);
             --gold-gradient: linear-gradient(135deg, #fff1b8 0%, #f5b915 50%, #c9971a 100%);
             --text-main: #f7faf8;
             --text-muted: #9eb5a8;
+            --mono: 'JetBrains Mono', monospace;
         }
 
         * {
@@ -45,16 +45,16 @@
             inset: 0;
             background-size: 44px 44px;
             background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
             z-index: -1;
             pointer-events: none;
         }
 
         .container {
-            max-width: 1140px;
+            max-width: 1180px;
             width: 100%;
-            padding: 32px 20px 60px;
+            padding: 28px 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -66,20 +66,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 28px;
-            background: rgba(11, 21, 15, 0.82);
-            border: 1px solid rgba(241, 196, 15, 0.24);
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 18px 26px;
+            background: rgba(11, 21, 15, 0.86);
+            border: 1px solid rgba(241, 196, 15, 0.26);
             border-radius: 20px;
             backdrop-filter: blur(14px);
             box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
-            margin-bottom: 46px;
+            margin-bottom: 42px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.65rem;
+            gap: 11px;
+            font-size: 1.6rem;
             font-weight: 900;
             letter-spacing: 2px;
             background: var(--gold-gradient);
@@ -96,22 +98,39 @@
             height: 34px;
             border-radius: 10px;
             background: rgba(241, 196, 15, 0.14);
-            border: 1px solid rgba(241, 196, 15, 0.4);
+            border: 1px solid rgba(241, 196, 15, 0.42);
             color: var(--gold);
             font-size: 1.05rem;
             font-weight: 900;
             -webkit-text-fill-color: var(--gold);
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sys-tag {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: #c7d9cf;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 7px 12px;
+            border-radius: 999px;
+        }
+
         .status-badge {
             display: flex;
             align-items: center;
             gap: 9px;
-            background: rgba(24, 165, 88, 0.14);
-            border: 1px solid rgba(46, 204, 113, 0.35);
+            background: rgba(24, 165, 88, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.38);
             padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 0.4px;
             color: var(--dollar-light);
@@ -135,12 +154,24 @@
         /* Центральный верхний блок */
         .center-top {
             width: 100%;
-            max-width: 960px;
+            max-width: 980px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 58px;
+        }
+
+        .hero-kicker {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--dollar-light);
+            background: rgba(24, 165, 88, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.28);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+            letter-spacing: 0.6px;
         }
 
         .hero-title {
@@ -159,11 +190,11 @@
         }
 
         .hero-sub {
-            font-size: 1.12rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             line-height: 1.65;
             max-width: 780px;
-            margin-bottom: 34px;
+            margin-bottom: 30px;
         }
 
         .highlight-green {
@@ -174,6 +205,42 @@
         .highlight-gold {
             color: var(--gold);
             font-weight: 700;
+        }
+
+        /* Системная полоса метрик */
+        .telemetry-strip {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .telemetry-cell {
+            background: rgba(9, 17, 12, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px 14px;
+            text-align: left;
+        }
+
+        .telemetry-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .telemetry-val {
+            font-family: var(--mono);
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .telemetry-val.green {
+            color: var(--dollar-light);
         }
 
         /* Премиальный мануал */
@@ -201,7 +268,7 @@
             font-size: 0.92rem;
             color: var(--text-muted);
             line-height: 1.6;
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto 26px;
         }
 
@@ -247,8 +314,9 @@
         }
 
         .step-tag {
-            font-size: 0.74rem;
-            font-weight: 700;
+            font-family: var(--mono);
+            font-size: 0.73rem;
+            font-weight: 600;
             color: var(--dollar-light);
             background: rgba(24, 165, 88, 0.12);
             border: 1px solid rgba(46, 204, 113, 0.28);
@@ -271,7 +339,8 @@
         }
 
         .step-note {
-            font-size: 0.79rem;
+            font-family: var(--mono);
+            font-size: 0.76rem;
             color: #c6dad0;
             border-top: 1px solid rgba(255, 255, 255, 0.07);
             padding-top: 9px;
@@ -345,16 +414,16 @@
         }
 
         .section-label span {
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-family: var(--mono);
+            font-size: 0.78rem;
             color: var(--text-muted);
         }
 
-        /* Качественные премиальные карточки преимуществ */
+        /* Подробные карточки преимуществ в стиле dev-системы */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
             width: 100%;
             margin-bottom: 54px;
         }
@@ -364,7 +433,7 @@
             background: var(--card-surface);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
-            padding: 26px 22px 24px;
+            padding: 26px 24px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -376,35 +445,32 @@
                 box-shadow 0.38s ease;
         }
 
-        /* Тонкий блик сверху карточки */
         .feature-card::before {
             content: "";
             position: absolute;
             top: 0;
-            left: 20%;
-            right: 20%;
+            left: 18%;
+            right: 18%;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(241, 196, 15, 0.65), transparent);
             opacity: 0.55;
             transition: opacity 0.35s ease, left 0.35s ease, right 0.35s ease;
         }
 
-        /* Мягкое свечение внутри угла */
         .feature-card::after {
             content: "";
             position: absolute;
             top: -55px;
             right: -55px;
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(241, 196, 15, 0.14) 0%, transparent 70%);
             pointer-events: none;
-            transition: opacity 0.35s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: rgba(241, 196, 15, 0.45);
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 28px rgba(24, 165, 88, 0.14);
         }
@@ -417,15 +483,22 @@
 
         .card-header-row {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
-            margin-bottom: 22px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        /* Векторные кастомные иконки с плавным увеличением при клике */
+        .card-meta-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
         .feature-icon {
             width: 54px;
             height: 54px;
+            flex-shrink: 0;
             border-radius: 16px;
             background: linear-gradient(145deg, rgba(241, 196, 15, 0.16), rgba(24, 165, 88, 0.12));
             border: 1px solid rgba(241, 196, 15, 0.32);
@@ -468,16 +541,25 @@
             box-shadow: 0 14px 30px rgba(241, 196, 15, 0.42);
         }
 
+        .module-code {
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            color: var(--dollar-light);
+            background: rgba(24, 165, 88, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.24);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
         .card-index {
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.26);
-            font-variant-numeric: tabular-nums;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.32);
         }
 
         .feature-card h3 {
-            font-size: 1.12rem;
+            font-size: 1.18rem;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 10px;
@@ -485,20 +567,56 @@
         }
 
         .feature-card p {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.58;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-specs {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             margin-bottom: 20px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(6, 11, 8, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .card-specs li {
+            font-size: 0.83rem;
+            color: #d3e3da;
+            line-height: 1.45;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-specs li::before {
+            content: "▸";
+            font-family: var(--mono);
+            color: var(--gold);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .card-footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .card-footer-pill {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            align-self: flex-start;
-            font-size: 0.74rem;
+            font-family: var(--mono);
+            font-size: 0.73rem;
             font-weight: 700;
-            letter-spacing: 0.4px;
             text-transform: uppercase;
             color: var(--dollar-light);
             background: rgba(24, 165, 88, 0.12);
@@ -511,6 +629,12 @@
             color: var(--gold);
             background: rgba(241, 196, 15, 0.1);
             border-color: rgba(241, 196, 15, 0.26);
+        }
+
+        .card-ping {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
         }
 
         /* Нижний блок */
@@ -542,17 +666,16 @@
             text-align: center;
             padding: 20px;
             color: var(--text-muted);
-            font-size: 0.86rem;
+            font-family: var(--mono);
+            font-size: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        @media (max-width: 1024px) {
-            .features-grid {
+        @media (max-width: 920px) {
+            .telemetry-strip {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        @media (max-width: 820px) {
+            .features-grid,
             .manual-steps {
                 grid-template-columns: 1fr;
             }
@@ -566,9 +689,6 @@
             }
             .hero-title {
                 font-size: 2.1rem;
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
             }
             .btn-switch {
                 width: 100%;
@@ -592,72 +712,95 @@
                 <span class="logo-badge">$</span>
                 TEBIFIZSHOP
             </div>
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                <span>РАБОТАЕМ 24/7 • ВЫДАЧА МОМЕНТАЛЬНО</span>
+            <div class="header-right">
+                <span class="sys-tag">BUILD // DEV-CORE v2.6</span>
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>РАБОТАЕМ 24/7 • ВЫДАЧА МОМЕНТАЛЬНО</span>
+                </div>
             </div>
         </header>
 
-        <!-- По центру сверху: заголовок, расширенный мануал и переходники -->
+        <!-- По центру сверху: заголовок, телеметрия, расширенный мануал и переходники -->
         <section class="center-top">
+            <div class="hero-kicker">SYSTEM.READY // КАНАЛ ПРОДАЖ И ОТЗЫВОВ АКТИВЕН</div>
             <h1 class="hero-title">Лучший шоп по продаже <span>ФИЗОВ</span></h1>
             <p class="hero-sub">
                 Отзывы растут <span class="highlight-green">не по дням, а по часам</span>!
                 Самый вкусный прайс на рынке, лучшие цены <span class="highlight-gold">от пары рублей</span> и надежные аккаунты только у меня.
             </p>
 
+            <div class="telemetry-strip">
+                <div class="telemetry-cell">
+                    <div class="telemetry-label">ПРАЙС-ПОРОГ</div>
+                    <div class="telemetry-val">ОТ ПАРЫ РУБЛЕЙ</div>
+                </div>
+                <div class="telemetry-cell">
+                    <div class="telemetry-label">ДИНАМИКА ОТЗЫВОВ</div>
+                    <div class="telemetry-val green">КАЖДЫЙ ЧАС</div>
+                </div>
+                <div class="telemetry-cell">
+                    <div class="telemetry-label">КАЧЕСТВО АККАУНТОВ</div>
+                    <div class="telemetry-val">НАДЕЖНОСТЬ 100%</div>
+                </div>
+                <div class="telemetry-cell">
+                    <div class="telemetry-label">СКОРОСТЬ СБОРКИ</div>
+                    <div class="telemetry-val green">БЫСТРО И ПО ДЕЛУ</div>
+                </div>
+            </div>
+
             <div class="manual-box">
                 <div class="manual-header">Подробный мануал — как забрать физы без лишней суеты</div>
                 <p class="manual-intro">
-                    Всё устроено максимально просто: зашел, чекнул движ в отзывах, прикинул объем под свои задачи и забрал рабочий материал у селлера.
+                    Всё отлажено как часы: зашел, чекнул свежий движ в отзывах, выбрал нужный объем под задачу и забрал рабочий материал напрямую у продавца.
                 </p>
                 <div class="manual-steps">
                     <div class="step-item">
                         <div class="step-top">
                             <span class="step-num">Шаг 01</span>
-                            <span class="step-tag">Репутация</span>
+                            <span class="step-tag">MODULE // REVIEWS</span>
                         </div>
                         <h4>Зайди в ветку отзывов</h4>
                         <p>
                             Жми на переходник <strong style="color:#2ecc71;">@Otzovotebi</strong> — там видно живую динамику: отклики залетают не по дням, а буквально каждый час.
                         </p>
-                        <div class="step-note">Совет: листай свежие посты — поток клиентов идет без пауз.</div>
+                        <div class="step-note">> tip: чекай свежие посты — поток клиентов идет без пауз.</div>
                     </div>
 
                     <div class="step-item">
                         <div class="step-top">
                             <span class="step-num">Шаг 02</span>
-                            <span class="step-tag">Прайс</span>
+                            <span class="step-tag">MODULE // PRICING</span>
                         </div>
                         <h4>Подбери объем под задачу</h4>
                         <p>
                             У нас самый вкусный прайс с ценниками <strong style="color:#f1c40f;">от пары рублей</strong> — можно взять как на тест, так и плотным паком под постоянную работу.
                         </p>
-                        <div class="step-note">Фишка: честная стоимость без накруток и скрытых доплат.</div>
+                        <div class="step-note">> spec: честная стоимость без накруток и скрытых доплат.</div>
                     </div>
 
                     <div class="step-item">
                         <div class="step-top">
                             <span class="step-num">Шаг 03</span>
-                            <span class="step-tag">Сделка</span>
+                            <span class="step-tag">MODULE // DEAL</span>
                         </div>
                         <h4>Отпиши лучшему продавцу</h4>
                         <p>
                             Переходи по кнопке в <strong style="color:#f1c40f;">@tebiktgk</strong>, напиши нужный объем и формат — отвечаем быстро, по делу и без пустой болтовни.
                         </p>
-                        <div class="step-note">Формат: сразу указывай количество, чтобы ускорить выдачу.</div>
+                        <div class="step-note">> format: сразу пиши количество, чтобы ускорить выдачу.</div>
                     </div>
 
                     <div class="step-item">
                         <div class="step-top">
                             <span class="step-num">Шаг 04</span>
-                            <span class="step-tag">Результат</span>
+                            <span class="step-tag">MODULE // DELIVERY</span>
                         </div>
                         <h4>Забери надежные аккаунты</h4>
                         <p>
                             Получай готовый материал и запускай в работу: делаем <strong style="color:#2ecc71;">быстро, качественно и надежно</strong>, с упором на сохранность аккаунтов.
                         </p>
-                        <div class="step-note">После теста не забудь черкнуть фидбек — копилка растет по часам.</div>
+                        <div class="step-note">> log: после теста черкни отзыв — ветка растет по часам.</div>
                     </div>
                 </div>
             </div>
@@ -672,52 +815,175 @@
             </div>
         </section>
 
-        <!-- Премиальные карточки преимуществ -->
+        <!-- Подробные карточки преимуществ -->
         <div class="section-label">
-            <h2>Почему выбирают TEBIFIZSHOP</h2>
-            <span>Нажми на иконку, чтобы выделить</span>
+            <h2>Системные модули TEBIFIZSHOP</h2>
+            <span>Нажми на иконку, чтобы выделить • Клик по пустому месту — сброс</span>
         </div>
 
         <section class="features-grid">
             <article class="feature-card">
                 <div>
                     <div class="card-header-row">
-                        <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку прайса">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="12" y1="2" x2="12" y2="22"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
+                        <div class="card-meta-left">
+                            <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку прайса">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="12" y1="2" x2="12" y2="22"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <span class="module-code">SYS.PRICE_01</span>
                         </div>
-                        <span class="card-index">01</span>
+                        <span class="card-index">#01</span>
                     </div>
-                    <h3>Цены от пары рублей</h3>
-                    <p>Самый вкусный прайс на рынке без космических наценок — выгодно брать и на тест, и крупным оптом.</p>
+                    <h3>Цены от пары рублей и самый вкусный прайс</h3>
+                    <p>
+                        Держим низкий порог входа и честные расценки, чтобы каждый мог спокойно зайти в работу без переплат за воздух.
+                    </p>
+                    <ul class="card-specs">
+                        <li>Вход от пары рублей — удобно взять на быстрый тест</li>
+                        <li>Вкусный прайс под розницу и плотные оптовые объемы</li>
+                        <li>Прозрачные условия без скрытых комиссий</li>
+                    </ul>
                 </div>
-                <span class="card-footer-pill gold-pill">Топ прайс</span>
+                <div class="card-footer-row">
+                    <span class="card-footer-pill gold-pill">Топ прайс</span>
+                    <span class="card-ping">rate // optimal</span>
+                </div>
             </article>
 
             <article class="feature-card">
                 <div>
                     <div class="card-header-row">
-                        <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку отзывов">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                                <polyline points="16 7 22 7 22 13"></polyline>
-                            </svg>
+                        <div class="card-meta-left">
+                            <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку отзывов">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                    <polyline points="16 7 22 7 22 13"></polyline>
+                                </svg>
+                            </div>
+                            <span class="module-code">SYS.REVIEWS_02</span>
                         </div>
-                        <span class="card-index">02</span>
+                        <span class="card-index">#02</span>
                     </div>
-                    <h3>Отзывы каждый час</h3>
-                    <p>Репутация растет не по дням, а по часам — живая лента реальных сделок в открытом канале.</p>
+                    <h3>Отзывы растут не по дням, а по часам</h3>
+                    <p>
+                        Репутация подтверждается делом: свежие отклики от клиентов появляются регулярно в течение дня в открытом канале.
+                    </p>
+                    <ul class="card-specs">
+                        <li>Постоянный поток сделок и живая обратная связь</li>
+                        <li>Прямой переходник на ветку @Otzovotebi в один клик</li>
+                        <li>Реальная активность без мертвой витрины</li>
+                    </ul>
                 </div>
-                <span class="card-footer-pill">Живой актив</span>
+                <div class="card-footer-row">
+                    <span class="card-footer-pill">Живой актив</span>
+                    <span class="card-ping">sync // hourly</span>
+                </div>
             </article>
 
             <article class="feature-card">
                 <div>
                     <div class="card-header-row">
-                        <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку надежности">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                <polyline points="9 12 11 14 15 10"></polyline>
-                            </svg>
+                        <div class="card-meta-left">
+                            <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку надежности">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 12 11 14 15 10"></polyline>
+                                </svg>
+                            </div>
+                            <span class="module-code">SYS.TRUST_03</span>
+                        </div>
+                        <span class="card-index">#03</span>
+                    </div>
+                    <h3>Надежные аккаунты только у меня</h3>
+                    <p>
+                        Ставим на качество и сохранность: каждый пак проходит проверку перед выдачей, чтобы аккаунты уверенно держали нагрузку.
+                    </p>
+                    <ul class="card-specs">
+                        <li>Аккуратная подготовка и контроль чистоты материала</li>
+                        <li>Стабильная работа под актуальные задачи клиентов</li>
+                        <li>Прямая связь с продавцом @tebiktgk без посредников</li>
+                    </ul>
+                </div>
+                <div class="card-footer-row">
+                    <span class="card-footer-pill gold-pill">Гарантия качества</span>
+                    <span class="card-ping">auth // verified</span>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <div>
+                    <div class="card-header-row">
+                        <div class="card-meta-left">
+                            <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку скорости">
+                                <svg viewBox="0 0 24 24">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <span class="module-code">SYS.SPEED_04</span>
+                        </div>
+                        <span class="card-index">#04</span>
+                    </div>
+                    <h3>Сделаем быстро, качественно и надежно</h3>
+                    <p>
+                        Ценим твое время: обрабатываем заявки оперативно, без тягомотины и лишних вопросов — четко под твои сроки.
+                    </p>
+                    <ul class="card-specs">
+                        <li>Быстрый отклик и четкая логика каждой сделки</li>
+                        <li>Сборка и выдача без затяжных пауз</li>
+                        <li>Единый стандарт: скорость + качество + надежность</li>
+                    </ul>
+                </div>
+                <div class="card-footer-row">
+                    <span class="card-footer-pill">Моментально</span>
+                    <span class="card-ping">latency // minimal</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="bottom-banner">
+            <h2>Сделаем быстро, качественно и надежно</h2>
+            <p>Переходники: <strong style="color: #f1c40f;">@tebiktgk</strong> (купить тут) и <strong style="color: #2ecc71;">@Otzovotebi</strong> (лучшие отзывы тут)</p>
+        </section>
+
+        <footer>
+            <p>© 2026 TEBIFIZSHOP // ENGINEERED & DEPLOYED • Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const icons = document.querySelectorAll('.feature-icon');
+
+            icons.forEach((icon) => {
+                icon.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const wasActive = icon.classList.contains('is-active');
+                    icons.forEach((item) => item.classList.remove('is-active'));
+                    if (!wasActive) {
+                        icon.classList.add('is-active');
+                    }
+                });
+
+                icon.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const wasActive = icon.classList.contains('is-active');
+                        icons.forEach((item) => item.classList.remove('is-active'));
+                        if (!wasActive) {
+                            icon.classList.add('is-active');
+                        }
+                    }
+                });
+            });
+
+            document.addEventListener('click', () => {
+                icons.forEach((icon) => icon.classList.remove('is-active'));
+            });
+        })();
+    </script>
+
+</body>
+</html>
