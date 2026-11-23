@@ -44,4 +44,548 @@
             inset: 0;
             background-size: 40px 40px;
             background-image:
-                linear-gradient(to right, rgba(255, 255,
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1120px;
+            width: 100%;
+            padding: 30px 20px 55px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Шапка */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 28px;
+            background: var(--card-bg);
+            border: 1px solid rgba(241, 196, 15, 0.28);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+            margin-bottom: 42px;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(24, 165, 88, 0.16);
+            border: 1px solid var(--dollar-green);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--dollar-light);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--dollar-light);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--dollar-light);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.45); opacity: 0.55; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Центральный верхний блок */
+        .center-top {
+            width: 100%;
+            max-width: 940px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .hero-title {
+            font-size: 3.1rem;
+            font-weight: 900;
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            max-width: 780px;
+            margin-bottom: 32px;
+        }
+
+        .highlight-green {
+            color: var(--dollar-light);
+            font-weight: 700;
+        }
+
+        .highlight-gold {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Расширенный мануал по центру сверху */
+        .manual-box {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid rgba(241, 196, 15, 0.35);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+        }
+
+        .manual-header {
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .manual-intro {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            max-width: 740px;
+            margin: 0 auto 22px;
+        }
+
+        .manual-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            text-align: left;
+        }
+
+        .step-item {
+            background: rgba(7, 13, 9, 0.72);
+            border: 1px solid rgba(46, 204, 113, 0.24);
+            border-radius: 17px;
+            padding: 18px 20px;
+            transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .step-item:hover {
+            border-color: rgba(241, 196, 15, 0.55);
+            transform: translateY(-2px);
+        }
+
+        .step-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .step-num {
+            display: inline-block;
+            font-size: 0.76rem;
+            font-weight: 900;
+            color: #070d09;
+            background: var(--gold-gradient);
+            padding: 4px 10px;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .step-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--dollar-light);
+            background: rgba(24, 165, 88, 0.14);
+            border: 1px solid rgba(46, 204, 113, 0.35);
+            padding: 3px 9px;
+            border-radius: 999px;
+        }
+
+        .step-item h4 {
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 7px;
+        }
+
+        .step-item p {
+            font-size: 0.87rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 8px;
+        }
+
+        .step-item p:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-note {
+            font-size: 0.8rem;
+            color: #d6e6dc;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 8px;
+        }
+
+        /* Переходники */
+        .switchers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            width: 100%;
+        }
+
+        .btn-switch {
+            text-decoration: none;
+            padding: 18px 30px;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn-seller {
+            background: var(--gold-gradient);
+            color: #070d09;
+            box-shadow: 0 10px 26px rgba(241, 196, 15, 0.35);
+        }
+
+        .btn-seller:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 34px rgba(241, 196, 15, 0.55);
+        }
+
+        .btn-reviews {
+            background: rgba(24, 165, 88, 0.16);
+            color: #ffffff;
+            border: 2px solid var(--dollar-green);
+            box-shadow: 0 10px 26px rgba(24, 165, 88, 0.22);
+        }
+
+        .btn-reviews:hover {
+            background: var(--dollar-green);
+            color: #070d09;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 34px rgba(24, 165, 88, 0.45);
+        }
+
+        /* Карточки преимуществ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 22px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 26px 22px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+
+        /* Плавные иконки с увеличением по клику до клика по пустому месту */
+        .feature-icon {
+            font-size: 2.15rem;
+            line-height: 1;
+            margin-bottom: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(24, 165, 88, 0.12);
+            border: 1px solid rgba(241, 196, 15, 0.22);
+            cursor: pointer;
+            user-select: none;
+            transform: scale(1) rotate(0deg);
+            transition:
+                transform 0.42s cubic-bezier(0.22, 1.25, 0.36, 1),
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .feature-icon:hover {
+            transform: scale(1.08) rotate(-4deg);
+            border-color: rgba(241, 196, 15, 0.55);
+        }
+
+        .feature-icon.is-active {
+            transform: scale(1.34) rotate(6deg);
+            background: rgba(241, 196, 15, 0.22);
+            border-color: var(--gold);
+            box-shadow: 0 10px 26px rgba(241, 196, 15, 0.32);
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--gold);
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Нижний блок */
+        .bottom-banner {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(24, 165, 88, 0.2) 0%, rgba(241, 196, 15, 0.14) 100%);
+            border: 1px solid rgba(241, 196, 15, 0.38);
+            border-radius: 22px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .bottom-banner h2 {
+            font-size: 1.65rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .bottom-banner p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-width: 820px) {
+            .manual-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 14px;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: 2.1rem;
+            }
+            .btn-switch {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">💵 TEBIFIZSHOP</div>
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                <span>РАБОТАЕМ 24/7 • ВЫДАЧА МОМЕНТАЛЬНО</span>
+            </div>
+        </header>
+
+        <!-- По центру сверху: заголовок, расширенный мануал и переходники -->
+        <section class="center-top">
+            <h1 class="hero-title">Лучший шоп по продаже <span>ФИЗОВ</span></h1>
+            <p class="hero-sub">
+                Отзывы растут <span class="highlight-green">не по дням, а по часам</span>!
+                Самый вкусный прайс на рынке, лучшие цены <span class="highlight-gold">от пары рублей</span> и надежные аккаунты только у меня.
+            </p>
+
+            <div class="manual-box">
+                <div class="manual-header">⚡ Подробный мануал — как забрать физы без лишней суеты</div>
+                <p class="manual-intro">
+                    Всё устроено максимально просто: зашел, чекнул движ в отзывах, прикинул объем под свои задачи и забрал рабочий материал у селлера.
+                </p>
+                <div class="manual-steps">
+                    <div class="step-item">
+                        <div class="step-top">
+                            <span class="step-num">Шаг 01</span>
+                            <span class="step-tag">Репутация</span>
+                        </div>
+                        <h4>Зайди в ветку отзывов</h4>
+                        <p>
+                            Жми на переходник <strong style="color:#2ecc71;">@Otzovotebi</strong> — там видно живую динамику: отклики залетают не по дням, а буквально каждый час.
+                        </p>
+                        <div class="step-note">Совет: листай свежие посты — поток клиентов идет без пауз.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-top">
+                            <span class="step-num">Шаг 02</span>
+                            <span class="step-tag">Прайс</span>
+                        </div>
+                        <h4>Подбери объем под задачу</h4>
+                        <p>
+                            У нас самый вкусный прайс с ценниками <strong style="color:#f1c40f;">от пары рублей</strong> — можно взять как на тест, так и плотным паком под постоянную работу.
+                        </p>
+                        <div class="step-note">Фишка: честная стоимость без накруток и скрытых доплат.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-top">
+                            <span class="step-num">Шаг 03</span>
+                            <span class="step-tag">Сделка</span>
+                        </div>
+                        <h4>Отпиши лучшему продавцу</h4>
+                        <p>
+                            Переходи по кнопке в <strong style="color:#f1c40f;">@tebiktgk</strong>, напиши нужный объем и формат — отвечаем быстро, по делу и без пустой болтовни.
+                        </p>
+                        <div class="step-note">Формат: сразу указывай количество, чтобы ускорить выдачу.</div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-top">
+                            <span class="step-num">Шаг 04</span>
+                            <span class="step-tag">Результат</span>
+                        </div>
+                        <h4>Забери надежные аккаунты</h4>
+                        <p>
+                            Получай готовый материал и запускай в работу: делаем <strong style="color:#2ecc71;">быстро, качественно и надежно</strong>, с упором на сохранность аккаунтов.
+                        </p>
+                        <div class="step-note">После теста не забудь черкнуть фидбек — копилка растет по часам.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="switchers">
+                <a href="https://t.me/tebiktgk" target="_blank" class="btn-switch btn-seller">
+                    👑 Лучший продавец (Купить тут)
+                </a>
+                <a href="https://t.me/Otzovotebi" target="_blank" class="btn-switch btn-reviews">
+                    ⭐ Лучшие отзывы тут (@Otzovotebi)
+                </a>
+            </div>
+        </section>
+
+        <!-- Преимущества (нажми на иконку — станет больше; нажми на пустое место — вернется назад) -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку цен">💸</div>
+                <h3>Цены от пары рублей</h3>
+                <p>Самый вкусный прайс и честные условия для опта и розницы.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку отзывов">📈</div>
+                <h3>Отзывы каждый час</h3>
+                <p>Репутация растет не по дням, а по часам за счет стабильной работы.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку надежности">🛡️</div>
+                <h3>Надежные аккаунты</h3>
+                <p>Только качественные физы с упором на надежность и чистоту.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" role="button" tabindex="0" aria-label="Увеличить иконку скорости">⚡</div>
+                <h3>Быстро и по делу</h3>
+                <p>Без воды и задержек — оперативно отвечаем и выдаем материал.</p>
+            </div>
+        </section>
+
+        <section class="bottom-banner">
+            <h2>Сделаем быстро, качественно и надежно</h2>
+            <p>Переходники: <strong style="color: #f1c40f;">@tebiktgk</strong> (купить тут) и <strong style="color: #2ecc71;">@Otzovotebi</strong> (лучшие отзывы тут)</p>
+        </section>
+
+        <footer>
+            <p>© 2026 TEBIFIZSHOP. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const icons = document.querySelectorAll('.feature-icon');
+
+            icons.forEach((icon) => {
+                icon.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const wasActive = icon.classList.contains('is-active');
+                    icons.forEach((item) => item.classList.remove('is-active'));
+                    if (!wasActive) {
+                        icon.classList.add('is-active');
+                    }
+                });
+
+                icon.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const wasActive = icon.classList.contains('is-active');
+                        icons.forEach((item) => item.classList.remove('is-active'));
+                        if (!wasActive) {
+                            icon.classList.add('is-active');
+                        }
+                    }
+                });
+            });
+
+            document.addEventListener('click', () => {
+                icons.forEach((icon) => icon.classList.remove('is-active'));
+            });
+        })();
+    </script>
+
+</body>
+</html>
