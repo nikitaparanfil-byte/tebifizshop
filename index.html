@@ -6,7 +6,7 @@
     <title>TEBIFIZSHOP // DEV-CORE — Лучший шоп по продаже физов</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #060b08;
@@ -14,9 +14,9 @@
             --dollar-green: #18a558;
             --dollar-light: #2ecc71;
             --gold: #f1c40f;
-            --gold-gradient: linear-gradient(135deg, #fff1b8 0%, #f5b915 50%, #c9971a 100%);
+            --gold-gradient: linear-gradient(135deg, #fff4c4 0%, #f7be16 48%, #c79316 100%);
             --text-main: #f7faf8;
-            --text-muted: #9eb5a8;
+            --text-muted: #a3baad;
             --mono: 'JetBrains Mono', monospace;
         }
 
@@ -30,7 +30,8 @@
         body {
             background-color: var(--bg-dark);
             background-image:
-                radial-gradient(circle at 18% 12%, rgba(24, 165, 88, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 50% 8%, rgba(24, 165, 88, 0.26) 0%, transparent 48%),
+                radial-gradient(circle at 18% 18%, rgba(241, 196, 15, 0.14) 0%, transparent 42%),
                 radial-gradient(circle at 82% 85%, rgba(241, 196, 15, 0.14) 0%, transparent 48%);
             color: var(--text-main);
             min-height: 100vh;
@@ -45,8 +46,8 @@
             inset: 0;
             background-size: 44px 44px;
             background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
             z-index: -1;
             pointer-events: none;
         }
@@ -54,55 +55,73 @@
         .container {
             max-width: 1180px;
             width: 100%;
-            padding: 28px 20px 60px;
+            padding: 26px 20px 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Шапка */
+        /* ================= ОБЪЕМНАЯ ШАПКА ================= */
         header {
+            position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 16px;
             flex-wrap: wrap;
-            padding: 18px 26px;
-            background: rgba(11, 21, 15, 0.86);
-            border: 1px solid rgba(241, 196, 15, 0.26);
-            border-radius: 20px;
-            backdrop-filter: blur(14px);
-            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
-            margin-bottom: 42px;
+            padding: 16px 26px;
+            background: linear-gradient(180deg, rgba(19, 36, 26, 0.92) 0%, rgba(10, 19, 14, 0.95) 100%);
+            border: 1px solid rgba(241, 196, 15, 0.34);
+            border-radius: 22px;
+            backdrop-filter: blur(16px);
+            box-shadow:
+                0 18px 42px rgba(0, 0, 0, 0.65),
+                0 0 28px rgba(24, 165, 88, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            margin-bottom: 34px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 241, 184, 0.8), transparent);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 11px;
-            font-size: 1.6rem;
+            gap: 13px;
+            font-size: 1.62rem;
             font-weight: 900;
             letter-spacing: 2px;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
+            filter: drop-shadow(0 3px 12px rgba(241, 196, 15, 0.25));
         }
 
         .logo-badge {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            background: rgba(241, 196, 15, 0.14);
-            border: 1px solid rgba(241, 196, 15, 0.42);
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, rgba(241, 196, 15, 0.26), rgba(24, 165, 88, 0.18));
+            border: 1px solid rgba(241, 196, 15, 0.55);
             color: var(--gold);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 900;
             -webkit-text-fill-color: var(--gold);
+            box-shadow:
+                0 6px 16px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.22);
         }
 
         .header-right {
@@ -114,26 +133,31 @@
 
         .sys-tag {
             font-family: var(--mono);
-            font-size: 0.75rem;
-            color: #c7d9cf;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 7px 12px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #d3e5db;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            padding: 8px 14px;
             border-radius: 999px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
         .status-badge {
             display: flex;
             align-items: center;
             gap: 9px;
-            background: rgba(24, 165, 88, 0.15);
-            border: 1px solid rgba(46, 204, 113, 0.38);
+            background: linear-gradient(180deg, rgba(24, 165, 88, 0.24), rgba(16, 115, 60, 0.18));
+            border: 1px solid rgba(46, 204, 113, 0.5);
             padding: 8px 16px;
             border-radius: 50px;
             font-size: 0.78rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.4px;
-            color: var(--dollar-light);
+            color: #6ef7a7;
+            box-shadow:
+                0 6px 20px rgba(24, 165, 88, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.16);
         }
 
         .status-dot {
@@ -141,7 +165,7 @@
             height: 8px;
             background-color: var(--dollar-light);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--dollar-light);
+            box-shadow: 0 0 12px var(--dollar-light);
             animation: pulse 1.6s infinite;
         }
 
@@ -151,10 +175,10 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* Центральный верхний блок */
+        /* ================= ОБЪЕМНЫЙ HERO-КОНТЕЙНЕР ================= */
         .center-top {
             width: 100%;
-            max-width: 980px;
+            max-width: 1040px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -162,88 +186,210 @@
             margin-bottom: 58px;
         }
 
+        .hero-stage {
+            position: relative;
+            width: 100%;
+            padding: 42px 34px 36px;
+            margin-bottom: 28px;
+            border-radius: 30px;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(241, 196, 15, 0.16) 0%, transparent 58%),
+                radial-gradient(ellipse at 50% 100%, rgba(24, 165, 88, 0.18) 0%, transparent 62%),
+                linear-gradient(165deg, rgba(19, 36, 26, 0.9) 0%, rgba(8, 16, 12, 0.96) 100%);
+            border: 1px solid rgba(241, 196, 15, 0.32);
+            box-shadow:
+                0 28px 65px rgba(0, 0, 0, 0.7),
+                0 0 45px rgba(24, 165, 88, 0.14),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12),
+                inset 0 -1px 0 rgba(24, 165, 88, 0.25);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+        }
+
+        /* Верхний золотой блик витрины */
+        .hero-stage::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 16%;
+            right: 16%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff3c4, #f1c40f, transparent);
+            box-shadow: 0 0 18px rgba(241, 196, 15, 0.65);
+        }
+
+        /* Угловые инженерные рамки HUD */
+        .hud-corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-color: rgba(241, 196, 15, 0.55);
+            border-style: solid;
+            pointer-events: none;
+        }
+        .hud-tl { top: 14px; left: 14px; border-width: 2px 0 0 2px; border-top-left-radius: 6px; }
+        .hud-tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; border-top-right-radius: 6px; }
+        .hud-bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; border-bottom-left-radius: 6px; }
+        .hud-br { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; border-bottom-right-radius: 6px; }
+
         .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-family: var(--mono);
-            font-size: 0.78rem;
-            color: var(--dollar-light);
-            background: rgba(24, 165, 88, 0.1);
-            border: 1px solid rgba(46, 204, 113, 0.28);
-            padding: 6px 14px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #6ef7a7;
+            background: linear-gradient(180deg, rgba(24, 165, 88, 0.2), rgba(24, 165, 88, 0.08));
+            border: 1px solid rgba(46, 204, 113, 0.38);
+            padding: 7px 16px;
             border-radius: 999px;
-            margin-bottom: 16px;
-            letter-spacing: 0.6px;
+            margin-bottom: 20px;
+            letter-spacing: 0.7px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
 
         .hero-title {
-            font-size: 3.1rem;
+            font-size: 3.35rem;
             font-weight: 900;
-            line-height: 1.15;
+            line-height: 1.12;
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             letter-spacing: -0.5px;
+            text-shadow: 0 8px 28px rgba(0, 0, 0, 0.65);
         }
 
         .hero-title span {
+            display: inline-block;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 6px 24px rgba(241, 196, 15, 0.38));
         }
 
         .hero-sub {
-            font-size: 1.1rem;
-            color: var(--text-muted);
+            font-size: 1.12rem;
+            color: #bfd2c7;
             line-height: 1.65;
-            max-width: 780px;
-            margin-bottom: 30px;
+            max-width: 760px;
+            margin: 0 auto 32px;
         }
 
         .highlight-green {
-            color: var(--dollar-light);
-            font-weight: 700;
+            color: #4ef093;
+            font-weight: 800;
+            text-shadow: 0 0 16px rgba(46, 204, 113, 0.35);
         }
 
         .highlight-gold {
             color: var(--gold);
-            font-weight: 700;
+            font-weight: 800;
+            text-shadow: 0 0 16px rgba(241, 196, 15, 0.35);
         }
 
-        /* Системная полоса метрик */
+        /* ================= ОБЪЕМНЫЕ 3D-МЕТРИКИ ================= */
         .telemetry-strip {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 14px;
         }
 
         .telemetry-cell {
-            background: rgba(9, 17, 12, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 12px 14px;
+            position: relative;
+            background: linear-gradient(165deg, rgba(22, 41, 30, 0.88) 0%, rgba(9, 17, 12, 0.96) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 16px 16px 14px;
             text-align: left;
+            box-shadow:
+                0 12px 26px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .telemetry-cell::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 14%;
+            right: 14%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(241, 196, 15, 0.6), transparent);
+        }
+
+        .telemetry-cell:hover {
+            transform: translateY(-4px);
+            border-color: rgba(241, 196, 15, 0.48);
+            box-shadow:
+                0 18px 34px rgba(0, 0, 0, 0.65),
+                0 0 22px rgba(241, 196, 15, 0.14),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
+        .telemetry-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 7px;
         }
 
         .telemetry-label {
             font-family: var(--mono);
             font-size: 0.68rem;
-            color: var(--text-muted);
+            font-weight: 700;
+            color: #9cb3a6;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            margin-bottom: 4px;
+        }
+
+        .telemetry-led {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold);
+        }
+
+        .telemetry-led.green {
+            background: var(--dollar-light);
+            box-shadow: 0 0 8px var(--dollar-light);
         }
 
         .telemetry-val {
             font-family: var(--mono);
-            font-size: 0.92rem;
-            font-weight: 700;
+            font-size: 0.96rem;
+            font-weight: 800;
             color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(241, 196, 15, 0.22);
         }
 
         .telemetry-val.green {
-            color: var(--dollar-light);
+            color: #4ef093;
+            text-shadow: 0 2px 10px rgba(46, 204, 113, 0.22);
         }
 
-        /* Премиальный мануал */
+        .telemetry-bar {
+            width: 100%;
+            height: 4px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            overflow: hidden;
+        }
+
+        .telemetry-bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: var(--gold-gradient);
+        }
+
+        .telemetry-bar-fill.green {
+            background: linear-gradient(90deg, #18a558, #4ef093);
+        }
+
+        /* ================= ПРЕМИАЛЬНЫЙ МАНУАЛ ================= */
         .manual-box {
             width: 100%;
             background: var(--card-surface);
@@ -419,7 +565,7 @@
             color: var(--text-muted);
         }
 
-        /* Подробные карточки преимуществ в стиле dev-системы */
+        /* Подробные карточки преимуществ */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -687,8 +833,14 @@
                 gap: 14px;
                 text-align: center;
             }
+            .hero-stage {
+                padding: 30px 18px 26px;
+            }
             .hero-title {
-                font-size: 2.1rem;
+                font-size: 2.05rem;
+            }
+            .telemetry-strip {
+                grid-template-columns: 1fr;
             }
             .btn-switch {
                 width: 100%;
@@ -721,31 +873,57 @@
             </div>
         </header>
 
-        <!-- По центру сверху: заголовок, телеметрия, расширенный мануал и переходники -->
+        <!-- Объемный верхний блок: витрина + 3D-метрики + мануал + переходники -->
         <section class="center-top">
-            <div class="hero-kicker">SYSTEM.READY // КАНАЛ ПРОДАЖ И ОТЗЫВОВ АКТИВЕН</div>
-            <h1 class="hero-title">Лучший шоп по продаже <span>ФИЗОВ</span></h1>
-            <p class="hero-sub">
-                Отзывы растут <span class="highlight-green">не по дням, а по часам</span>!
-                Самый вкусный прайс на рынке, лучшие цены <span class="highlight-gold">от пары рублей</span> и надежные аккаунты только у меня.
-            </p>
+            <div class="hero-stage">
+                <span class="hud-corner hud-tl"></span>
+                <span class="hud-corner hud-tr"></span>
+                <span class="hud-corner hud-bl"></span>
+                <span class="hud-corner hud-br"></span>
 
-            <div class="telemetry-strip">
-                <div class="telemetry-cell">
-                    <div class="telemetry-label">ПРАЙС-ПОРОГ</div>
-                    <div class="telemetry-val">ОТ ПАРЫ РУБЛЕЙ</div>
-                </div>
-                <div class="telemetry-cell">
-                    <div class="telemetry-label">ДИНАМИКА ОТЗЫВОВ</div>
-                    <div class="telemetry-val green">КАЖДЫЙ ЧАС</div>
-                </div>
-                <div class="telemetry-cell">
-                    <div class="telemetry-label">КАЧЕСТВО АККАУНТОВ</div>
-                    <div class="telemetry-val">НАДЕЖНОСТЬ 100%</div>
-                </div>
-                <div class="telemetry-cell">
-                    <div class="telemetry-label">СКОРОСТЬ СБОРКИ</div>
-                    <div class="telemetry-val green">БЫСТРО И ПО ДЕЛУ</div>
+                <div class="hero-kicker">SYSTEM.READY // КАНАЛ ПРОДАЖ И ОТЗЫВОВ АКТИВЕН</div>
+                <h1 class="hero-title">Лучший шоп по продаже <span>ФИЗОВ</span></h1>
+                <p class="hero-sub">
+                    Отзывы растут <span class="highlight-green">не по дням, а по часам</span>!
+                    Самый вкусный прайс на рынке, лучшие цены <span class="highlight-gold">от пары рублей</span> и надежные аккаунты только у меня.
+                </p>
+
+                <div class="telemetry-strip">
+                    <div class="telemetry-cell">
+                        <div class="telemetry-top">
+                            <span class="telemetry-label">ПРАЙС-ПОРОГ</span>
+                            <span class="telemetry-led"></span>
+                        </div>
+                        <div class="telemetry-val">ОТ ПАРЫ РУБЛЕЙ</div>
+                        <div class="telemetry-bar"><div class="telemetry-bar-fill" style="width: 96%;"></div></div>
+                    </div>
+
+                    <div class="telemetry-cell">
+                        <div class="telemetry-top">
+                            <span class="telemetry-label">ДИНАМИКА ОТЗЫВОВ</span>
+                            <span class="telemetry-led green"></span>
+                        </div>
+                        <div class="telemetry-val green">КАЖДЫЙ ЧАС</div>
+                        <div class="telemetry-bar"><div class="telemetry-bar-fill green" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="telemetry-cell">
+                        <div class="telemetry-top">
+                            <span class="telemetry-label">КАЧЕСТВО АККАУНТОВ</span>
+                            <span class="telemetry-led"></span>
+                        </div>
+                        <div class="telemetry-val">НАДЕЖНОСТЬ 100%</div>
+                        <div class="telemetry-bar"><div class="telemetry-bar-fill" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="telemetry-cell">
+                        <div class="telemetry-top">
+                            <span class="telemetry-label">СКОРОСТЬ СБОРКИ</span>
+                            <span class="telemetry-led green"></span>
+                        </div>
+                        <div class="telemetry-val green">БЫСТРО И ПО ДЕЛУ</div>
+                        <div class="telemetry-bar"><div class="telemetry-bar-fill green" style="width: 94%;"></div></div>
+                    </div>
                 </div>
             </div>
 
@@ -960,30 +1138,4 @@
                 icon.addEventListener('click', (event) => {
                     event.stopPropagation();
                     const wasActive = icon.classList.contains('is-active');
-                    icons.forEach((item) => item.classList.remove('is-active'));
-                    if (!wasActive) {
-                        icon.classList.add('is-active');
-                    }
-                });
-
-                icon.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        const wasActive = icon.classList.contains('is-active');
-                        icons.forEach((item) => item.classList.remove('is-active'));
-                        if (!wasActive) {
-                            icon.classList.add('is-active');
-                        }
-                    }
-                });
-            });
-
-            document.addEventListener('click', () => {
-                icons.forEach((icon) => icon.classList.remove('is-active'));
-            });
-        })();
-    </script>
-
-</body>
-</html>
+                    icons.
